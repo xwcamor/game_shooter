@@ -1,0 +1,255 @@
+/* style.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Nueva clase para el fondo de login/registro */
+.fondo-logeo {
+    background-image: url('fondo_inicio.jpg'); /* ¡Ruta de la imagen corregida aquí! */
+    background-size: cover; /* Cubre todo el área del body */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Opcional: la imagen de fondo se mantiene fija al hacer scroll */
+    background-color: #f0f0f0; /* Fallback color si la imagen no carga */
+}
+
+h1 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el canvas */
+canvas {
+    background-color: #333; /* Fondo oscuro para el juego */
+    border: 2px solid #555;
+    margin-top: 20px;
+    display: block; /* Asegura que no haya espacio extra debajo */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor de vidas */
+#vidasContainer {
+    font-size: 24px;
+    color: red;
+    margin-top: 10px;
+}
+
+/* Temporizador */
+#temporizador {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Botón Guardar Puntaje */
+#btnGuardarPuntaje {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#btnGuardarPuntaje:hover {
+    background-color: #218838;
+}
+
+/* Leaderboard */
+#leaderboard {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 90%;
+}
+
+#leaderboard h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#leaderboard ol {
+    list-style-type: decimal;
+    padding-left: 25px;
+    text-align: left;
+}
+
+#leaderboard li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #eee;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#leaderboard li:last-child {
+    border-bottom: none;
+}
+
+#leaderboard li span:first-child {
+    font-weight: bold;
+}
+#leaderboard li span:last-child {
+    color: #777;
+}
+
+/* Estilos para formularios (login, registro, guardar puntaje) */
+.login-container, .register-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    margin: auto; /* Centrar en la página */
+    margin-top: 50px;
+}
+.login-container h2, .register-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.login-container label, .register-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+.login-container input[type="text"],
+.login-container input[type="password"],
+.register-container input[type="text"],
+.register-container input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.login-container button, .register-container button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.register-container button {
+    background-color: #28a745;
+}
+.login-container button:hover {
+    background-color: #0056b3;
+}
+.register-container button:hover {
+    background-color: #218838;
+}
+.login-container p, .register-container p {
+    margin-top: 20px;
+    color: #666;
+}
+.login-container a, .register-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+.register-container a {
+    color: #28a745; /* Enlace de registro en login */
+}
+.login-container p a {
+    color: #28a745;
+}
+.register-container p a {
+    color: #007bff;
+}
+.login-container a:hover, .register-container a:hover {
+    text-decoration: underline;
+}
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para el formulario flotante de guardar puntaje */
+#formulario {
+    /* Los estilos para ocultar/mostrar y posicionar ya están en index.php,
+        aquí solo ajustes visuales */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+}
+#formulario h2 {
+    margin-top: 0;
+    color: #333;
+}
+#formulario button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+#formulario button[type="submit"]:hover {
+    background-color: #45a049;
+}
+#btnCerrarFormulario {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+#btnCerrarFormulario:hover {
+    color: #333;
+}
+#mensaje {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
